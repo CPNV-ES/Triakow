@@ -1,5 +1,6 @@
 import React from "react";
 import "./menu.css"
+import {MDBBtn} from "mdbreact";
 
 class Menu extends React.Component {
   render() {
@@ -7,7 +8,7 @@ class Menu extends React.Component {
       <header>
         <nav>
           <div>
-            <button>Se Connecter</button>
+            <MDBBtn color="primary">Primary</MDBBtn>
           </div>
         </nav>
       </header>
