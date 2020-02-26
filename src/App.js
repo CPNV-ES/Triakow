@@ -4,13 +4,13 @@ import {Search} from "./component/search/search";
 import {MuiPickersUtilsProvider} from "@material-ui/pickers";
 import MomentUtils from '@date-io/moment';
 import {Headline} from "./component/headline/headline";
-import {Menu} from "./component/menu/menu";
+import {Navigation} from "./component/navigation/navigation";
 
 function App() {
   return (
     <div>
       <MuiPickersUtilsProvider utils={MomentUtils}>
-        <Menu/>
+        <Navigation/>
         <Headline/>
         <Search/>
       </MuiPickersUtilsProvider>
