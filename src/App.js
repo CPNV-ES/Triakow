@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-import Menu from "./component/menu/menu";
-import LogoZone from "./component/logoZone/logoZone";
-import SearchZone from "./component/searchZone/searchZone";
+import {Search} from "./component/search/search";
+import {MuiPickersUtilsProvider} from "@material-ui/pickers";
+import MomentUtils from '@date-io/moment';
+import {Headline} from "./component/headline/headline";
+import {Navigation} from "./component/navigation/navigation";
 
 function App() {
   return (
     <div>
-      <Menu/>
-      <main>
-        <LogoZone/>
-        <SearchZone/>
-      </main>
-      <p>Hello world</p>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
+        <Navigation/>
+        <Headline/>
+        <Search/>
+      </MuiPickersUtilsProvider>
     </div>
   );
 }
