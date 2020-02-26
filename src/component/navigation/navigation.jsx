@@ -4,20 +4,27 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Axios from "axios";
-import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import Menu from '@material-ui/core/Menu';
+import Select from "@material-ui/core/Select";
 
-export class Menu extends React.Component {
+export class Navigation extends React.Component {
+  openMenuRef = null;
+
   constructor(props) {
     super(props);
     this.state = {
       selectedCurrency: 0,
       currencies: [],
+      isMenuOpen: false
     }
   }
 
   componentDidMount() {
     this.loadData()
+
+    //TODO find a way to not use document
+    this.openMenuRef = document.getElementById("openMenu")
   }
 
   loadData() {
@@ -39,11 +46,27 @@ export class Menu extends React.Component {
             </Grid>
 
             <Grid item>
-              <Button>Menu</Button>
+              <div>
+                <Button innerRef={this.openMenuRef} id={"openMenu"} aria-controls="simple-menu" aria-haspopup="true"
+                        onClick={this.handleOpenMenu}>
+                  Menu
+                </Button>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={this.openMenuRef}
+                  open={this.state.isMenuOpen}
+                  onClose={this.handleCloseMenu}
+                >
+                  <MenuItem onClick={this.handleCloseMenu}>Consultés récemment</MenuItem>
+                  <MenuItem onClick={this.handleCloseMenu}>Aperçus - réservations</MenuItem>
+                  <MenuItem onClick={this.handleCloseMenu}>Moyen de paiement</MenuItem>
+                </Menu>
+              </div>
             </Grid>
 
             <Grid item>
-              <Select value={this.state.selectedCurrency} onChange={this.handleCurrencyChange}>
+              <Select disableUnderline value={this.state.selectedCurrency}
+                      onChange={this.handleCurrencyChange}>
                 {currencies}
               </Select>
             </Grid>
@@ -53,8 +76,6 @@ export class Menu extends React.Component {
             </Grid>
           </Grid>
         </Toolbar>
-
-
       </AppBar>
     )
   }
@@ -69,5 +90,17 @@ export class Menu extends React.Component {
     this.setState({
       selectedCurrency: event.target.value
     })
-  }
+  };
+
+  handleOpenMenu = event => {
+    this.setState({
+      isMenuOpen: true
+    })
+  };
+
+  handleCloseMenu = () => {
+    this.setState({
+      isMenuOpen: false
+    })
+  };
 }
