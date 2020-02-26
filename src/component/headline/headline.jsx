@@ -13,15 +13,15 @@ export class Headline extends React.Component {
 
   render() {
     return (
-      <Grid container spacing={3} justify={"center"}>
+      <Grid id="headline" container spacing={3} justify={"center"}>
         <Grid item>
           <img alt={"Trivago logo"} id="logo" src={Logo}/>
         </Grid>
 
         <Grid item>
-          <Typography variant="h5">Trouvez l’hôtel idéal et comparez les prix de différents sites
-            Web</Typography>
-          <Typography variant="h6">Essayez de rechercher une ville, un hôtel ou même un lieu connu.</Typography>
+          <Typography variant="h5"><strong>Trouvez l’hôtel idéal et comparez les prix de différents sites
+            Web</strong></Typography>
+          <Typography variant="p">Essayez de rechercher une ville, un hôtel ou même un lieu connu.</Typography>
         </Grid>
       </Grid>
     )
