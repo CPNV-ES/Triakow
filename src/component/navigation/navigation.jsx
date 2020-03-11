@@ -5,20 +5,26 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Axios from "axios";
 import MenuItem from "@material-ui/core/MenuItem";
-import Menu from '@material-ui/core/Menu';
 import Select from "@material-ui/core/Select";
+import {useTranslation} from "react-i18next";
+import {PopupMenu} from "../common/popupMenu/popupMenu";
 
-export function Navigation(props) {
+const AVAILABLE_LANGUAGE = ["FR", "EN", "DE", "IT"];
+
+export function Navigation() {
   const [selectedCurrencyKey, setSelectedCurrencyKey] = useState(0);
   const [currencies, setCurrencies] = useState([]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openMenuRef, setOpenMenuRef] = useState(null);
+
+  const {t, i18n} = useTranslation();
 
   useEffect(() => {
-    setOpenMenuRef(document.getElementById("openMenu"));
-
     Axios.get("/data.json").then(res => setCurrencies(Object.keys(res.data)));
   }, []);
+
+  useEffect(() => {
+    setSelectedCurrencyKey(currencies.indexOf(t("defaultCurrency")));
+    document.title = t("title")
+  }, [i18n.language, currencies]);
 
   const renderedCurrencies = currencies.map((value, idx) =>
     <MenuItem key={idx} value={idx}>{value}</MenuItem>
@@ -29,26 +35,19 @@ export function Navigation(props) {
       <Toolbar>
         <Grid container justify={"flex-end"}>
           <Grid item>
-            <Button>Se connecter</Button>
+            <Button>{t("navigation.connectLabel")}</Button>
           </Grid>
 
           <Grid item>
-            <div>
-              <Button innerRef={openMenuRef} id={"openMenu"} aria-controls="simple-menu" aria-haspopup="true"
-                      onClick={_ => setIsMenuOpen(true)}>
-                Menu
-              </Button>
-              <Menu
-                id="simple-menu"
-                anchorEl={openMenuRef}
-                open={isMenuOpen}
-                onClose={_ => setIsMenuOpen(false)}
-              >
-                <MenuItem onClick={_ => setIsMenuOpen(false)}>Consultés récemment</MenuItem>
-                <MenuItem onClick={_ => setIsMenuOpen(false)}>Aperçus - réservations</MenuItem>
-                <MenuItem onClick={_ => setIsMenuOpen(false)}>Moyen de paiement</MenuItem>
-              </Menu>
-            </div>
+            <PopupMenu
+              id={"openMenu"}
+              label={t("navigation.menu.label")}
+              items={[
+                {label: t("navigation.menu.item.recentlyConsulted"),},
+                {label: t("navigation.menu.item.previewReservation"),},
+                {label: t("navigation.menu.item.paymentMethod"),}
+              ]}
+            />
           </Grid>
 
           <Grid item>
@@ -59,7 +58,17 @@ export function Navigation(props) {
           </Grid>
 
           <Grid item>
-            <Button>FR</Button>
+            <PopupMenu
+              id={"openMenuLang"}
+              label={i18n.language}
+              items={AVAILABLE_LANGUAGE.map(lang => {
+                return {
+                  label: lang,
+                  value: lang,
+                  onClick: (language) => i18n.changeLanguage(language)
+                }
+              })}
+            />
           </Grid>
         </Grid>
       </Toolbar>
