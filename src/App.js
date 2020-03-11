@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {Search} from "./component/search/search";
 import {MuiPickersUtilsProvider} from "@material-ui/pickers";
 import MomentUtils from '@date-io/moment';
@@ -8,11 +8,13 @@ import {Navigation} from "./component/navigation/navigation";
 function App() {
   return (
     <div>
-      <MuiPickersUtilsProvider utils={MomentUtils}>
-        <Navigation/>
-        <Headline/>
-        <Search/>
-      </MuiPickersUtilsProvider>
+      <Suspense fallback={"loading"}>
+        <MuiPickersUtilsProvider utils={MomentUtils}>
+          <Navigation/>
+          <Headline/>
+          <Search/>
+        </MuiPickersUtilsProvider>
+      </Suspense>
     </div>
   );
 }
