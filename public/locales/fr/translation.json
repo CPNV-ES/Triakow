@@ -1,5 +1,29 @@
 {
   "headline": {
-    "pitch": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web"
+    "pitch": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web",
+    "try": "Essayez de rechercher une ville, un hôtel ou même un lieu connu.",
+    "logoAlt": "Trivago logo"
+  },
+  "navigation": {
+    "connectLabel": "Se connecter",
+    "menu": {
+      "label": "Menu",
+      "item": {
+        "recentlyConsulted": "Consultés récemment",
+        "previewReservation": "Aperçus - réservations",
+        "paymentMethod": "Moyen de paiement"
+      }
+    }
+  },
+  "search": {
+    "room": {
+      "item": {
+        "single": "Chambre simple",
+        "double": "Chambre double",
+        "family": "Chambres familiales",
+        "multiple": "Chambres multiples"
+      }
+    },
+    "searchLabel": "Chercher"
   }
 }

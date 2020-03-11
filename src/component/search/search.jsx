@@ -6,12 +6,15 @@ import MenuItem from "@material-ui/core/MenuItem";
 import {DatePicker} from "@material-ui/pickers";
 import moment from 'moment'
 import Grid from "@material-ui/core/Grid";
+import {useTranslation} from "react-i18next";
 
 export function Search() {
   const [city, setCity] = useState("");
   const [room, setRoom] = useState(0);
   const [startAt, setStartAt] = useState(moment());
   const [endAt, setEndAt] = useState(moment());
+
+  const {t} = useTranslation();
 
   return (
     <Grid container spacing={3} justify={"center"}>
@@ -29,16 +32,16 @@ export function Search() {
 
       <Grid item>
         <Select value={room} onChange={event => setRoom(event.target.value)}>
-          <MenuItem value={0}>Chambre simple</MenuItem>
-          <MenuItem value={1}>Chambre double</MenuItem>
-          <MenuItem value={2}>Chambres familiales</MenuItem>
-          <MenuItem value={3}>Chambres multiples</MenuItem>
+          <MenuItem value={0}>{t("search.room.item.single")}</MenuItem>
+          <MenuItem value={1}>{t("search.room.item.double")}</MenuItem>
+          <MenuItem value={2}>{t("search.room.item.family")}</MenuItem>
+          <MenuItem value={3}>{t("search.room.item.multiple")}</MenuItem>
         </Select>
       </Grid>
 
       <Grid item>
         <Button variant="contained" color="primary">
-          Chercher
+          {t("search.searchLabel")}
         </Button>
       </Grid>
     </Grid>
