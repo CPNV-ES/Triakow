@@ -1,5 +1,6 @@
 {
   "defaultCurrency": "USD",
+  "title": "Trivakow - Compare hotel prices worldwide",
   "headline": {
     "pitch": "Find your ideal hotel and compare prices from different websites",
     "try": "Try searching for a city, a specific hotel, or even a landmark!",
@@ -25,6 +26,8 @@
         "multiple": "Multiple rooms"
       }
     },
+    "checkInLabel": "Check in",
+    "checkOutLabel": "Check out",
     "searchLabel": "Search"
   }
 }

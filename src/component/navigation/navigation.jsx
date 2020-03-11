@@ -23,6 +23,7 @@ export function Navigation() {
 
   useEffect(() => {
     setSelectedCurrencyKey(currencies.indexOf(t("defaultCurrency")));
+    document.title = t("title")
   }, [i18n.language, currencies]);
 
   const renderedCurrencies = currencies.map((value, idx) =>

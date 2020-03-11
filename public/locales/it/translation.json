@@ -1,5 +1,6 @@
 {
   "defaultCurrency": "EUR",
+  "title": "Trivakow - confronta prezzi hotel in tutto il mondo",
   "headline": {
     "pitch": "Trova il tuo hotel ideale e confronta i prezzi di tantissimi siti web",
     "try": "Prova a inserire un nome di città, un hotel o un luogo famoso!",
@@ -25,6 +26,8 @@
         "multiple": "Camere multiple"
       }
     },
+    "checkInLabel": "Arrivo",
+    "checkOutLabel": "Partenza",
     "searchLabel": "Cerca"
   }
 }

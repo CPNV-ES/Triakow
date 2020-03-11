@@ -1,5 +1,6 @@
 {
   "defaultCurrency": "CHF",
+  "title": "Trivakow - Comparer les prix des hôtels dans le monde entier",
   "headline": {
     "pitch": "Trouvez l’hôtel idéal et comparez les prix de différents sites Web",
     "try": "Essayez de rechercher une ville, un hôtel ou même un lieu connu.",
@@ -25,6 +26,8 @@
         "multiple": "Chambres multiples"
       }
     },
+    "checkInLabel": "Arrivée",
+    "checkOutLabel": "Départ",
     "searchLabel": "Chercher"
   }
 }

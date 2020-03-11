@@ -30,11 +30,11 @@ export function Search() {
         </Grid>
 
         <Grid item>
-          <DatePicker value={startAt} onChange={setStartAt}/>
+          <DatePicker label={t("search.checkInLabel")} value={startAt} onChange={setStartAt}/>
         </Grid>
 
         <Grid item>
-          <DatePicker value={endAt} onChange={setEndAt}/>
+          <DatePicker label={t("search.checkOutLabel")} value={endAt} onChange={setEndAt}/>
         </Grid>
 
         <Grid item>
