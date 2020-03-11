@@ -9,9 +9,9 @@ export function PopupMenu(props) {
 
   useEffect(() => setOpenMenuRef(document.getElementById(props.id)), [props.id]);
 
-  const items = props.items.map(item => {
+  const items = props.items.map((item, idx) => {
     return (
-      <MenuItem onClick={_ => {
+      <MenuItem key={idx} onClick={_ => {
         setIsMenuOpen(false);
         if (item.onClick)
           item.onClick(item.value)
