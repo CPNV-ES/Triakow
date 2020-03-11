@@ -1,5 +1,29 @@
 {
   "headline": {
-    "pitch": "DYLAN"
+    "pitch": "Find your ideal hotel and compare prices from different websites",
+    "try": "Try searching for a city, a specific hotel, or even a landmark!",
+    "logoAlt": "Trivago logo"
+  },
+  "navigation": {
+    "connectLabel": "Log in",
+    "menu": {
+      "label": "Menu",
+      "item": {
+        "recentlyConsulted": "Recently viewed",
+        "previewReservation": "Booking overview",
+        "paymentMethod": "Payment methods"
+      }
+    }
+  },
+  "search": {
+    "room": {
+      "item": {
+        "single": "Single room",
+        "double": "Double room",
+        "family": "Family rooms",
+        "multiple": "Multiple rooms"
+      }
+    },
+    "searchLabel": "Search"
   }
 }

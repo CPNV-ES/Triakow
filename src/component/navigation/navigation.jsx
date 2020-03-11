@@ -9,7 +9,7 @@ import Select from "@material-ui/core/Select";
 import {useTranslation} from "react-i18next";
 import {PopupMenu} from "../common/popupMenu/popupMenu";
 
-const AVAILABLE_LANGUAGE = ["FR", "EN", "GE", "IT"];
+const AVAILABLE_LANGUAGE = ["FR", "EN", "DE", "IT"];
 
 export function Navigation() {
   const [selectedCurrencyKey, setSelectedCurrencyKey] = useState(0);
