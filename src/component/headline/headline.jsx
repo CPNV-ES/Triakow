@@ -14,7 +14,7 @@ export function Headline() {
       <Grid item>
         <Typography variant="h5"><strong>Trouvez l’hôtel idéal et comparez les prix de différents sites
           Web</strong></Typography>
-        <Typography variant="p">Essayez de rechercher une ville, un hôtel ou même un lieu connu.</Typography>
+        <Typography variant="body1">Essayez de rechercher une ville, un hôtel ou même un lieu connu.</Typography>
       </Grid>
     </Grid>
   )

@@ -7,7 +7,6 @@ import {DatePicker} from "@material-ui/pickers";
 import moment from 'moment'
 import Grid from "@material-ui/core/Grid";
 
-
 export function Search() {
   const [city, setCity] = useState("");
   const [room, setRoom] = useState(0);
