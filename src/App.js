@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {Search} from "./component/search/search";
 import {MuiPickersUtilsProvider} from "@material-ui/pickers";
 import MomentUtils from '@date-io/moment';
