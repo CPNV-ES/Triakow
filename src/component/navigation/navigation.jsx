@@ -21,6 +21,10 @@ export function Navigation() {
     Axios.get("/data.json").then(res => setCurrencies(Object.keys(res.data)));
   }, []);
 
+  useEffect(() => {
+    setSelectedCurrencyKey(currencies.indexOf(t("defaultCurrency")));
+  }, [i18n.language, currencies]);
+
   const renderedCurrencies = currencies.map((value, idx) =>
     <MenuItem key={idx} value={idx}>{value}</MenuItem>
   );
