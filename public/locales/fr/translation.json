@@ -28,6 +28,7 @@
     },
     "checkInLabel": "Arrivée",
     "checkOutLabel": "Départ",
-    "searchLabel": "Chercher"
+    "searchLabel": "Chercher",
+    "cityPlaceholder": "Paris"
   }
 }

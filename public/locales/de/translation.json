@@ -28,6 +28,7 @@
     },
     "checkInLabel": "Anreise",
     "checkOutLabel": "Abreise",
-    "searchLabel": "Suchen"
+    "searchLabel": "Suchen",
+    "cityPlaceholder": "Berlin"
   }
 }

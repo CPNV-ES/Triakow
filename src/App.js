@@ -4,6 +4,12 @@ import {Navigation} from "./component/navigation/navigation";
 import {Headline} from "./component/headline/headline";
 import {Search} from "./component/search/search";
 import Axios from "axios";
+// Load translation used in our app for search component
+import "moment/locale/fr";
+import "moment/locale/en-gb";
+import "moment/locale/it";
+import "moment/locale/de";
+import moment from "moment";
 
 function App() {
   const [selectedCurrencyKey, setSelectedCurrencyKey] = useState(0);
@@ -36,6 +42,30 @@ function App() {
           previewReservation: t("navigation.menu.item.previewReservation"),
           paymentMethod: t("navigation.menu.item.paymentMethod")
         }
+      },
+      search: {
+        language: i18n.language,
+        initialValues: {
+          city: '',
+          room: 0,
+          startAt: moment(),
+          endAt: moment()
+        },
+        onSubmit: (values) => {
+          console.log(values)
+        },
+        label: {
+          checkIn: t("search.checkInLabel"),
+          checkOut: t("search.checkOutLabel"),
+          room: {
+            single: t("search.room.item.single"),
+            double: t("search.room.item.double"),
+            family: t("search.room.item.family"),
+            multiple: t("search.room.item.multiple")
+          },
+          search: t("search.searchLabel"),
+        },
+        cityPlaceholder: t("search.cityPlaceholder"),
       }
     }
   }
@@ -54,7 +84,7 @@ function App() {
       <div>
         <Navigation {...props.navigation}/>
         <Headline {...props.headline}/>
-        <Search/>
+        <Search {...props.search}/>
       </div>
     )
   }

@@ -28,6 +28,7 @@
     },
     "checkInLabel": "Arrivo",
     "checkOutLabel": "Partenza",
-    "searchLabel": "Cerca"
+    "searchLabel": "Cerca",
+    "cityPlaceholder": "Roma"
   }
 }

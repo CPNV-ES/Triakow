@@ -28,6 +28,7 @@
     },
     "checkInLabel": "Check in",
     "checkOutLabel": "Check out",
-    "searchLabel": "Search"
+    "searchLabel": "Search",
+    "cityPlaceholder": "London"
   }
 }
