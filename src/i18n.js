@@ -9,7 +9,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "fr"
+    fallbackLng: "fr",
+    react: {useSuspense: false}
   });
 
 export default i18n;
