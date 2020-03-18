@@ -2,7 +2,10 @@
   "defaultCurrency": "EUR",
   "title": "Trivakow - confronta prezzi hotel in tutto il mondo",
   "headline": {
-    "pitch": "Trova il tuo hotel ideale e confronta i prezzi di tantissimi siti web",
+    "pitch": {
+      "big": "Trova il tuo hotel ideale e confronta i prezzi di tantissimi siti web",
+      "small": "Cerca la tua sistemazione ideale"
+    },
     "try": "Prova a inserire un nome di città, un hotel o un luogo famoso!",
     "logoAlt": "Trivago logo"
   },
