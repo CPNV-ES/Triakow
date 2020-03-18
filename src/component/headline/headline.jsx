@@ -7,12 +7,12 @@ export function Headline(props) {
   return (
     <Grid id="headline" container spacing={3} justify={"center"}>
       <Grid item>
-        <img alt={props.logo.alt} id="logo" src={props.logo.src}/>
+        <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>
       </Grid>
 
       <Grid item>
-        <Typography variant="h5"><strong>{props.pitch}</strong></Typography>
-        <Typography variant="body1">{props.try}</Typography>
+        <Typography variant="h5"><strong>{props.label.pitch}</strong></Typography>
+        <Typography variant="body1">{props.label.try}</Typography>
       </Grid>
     </Grid>
   )
