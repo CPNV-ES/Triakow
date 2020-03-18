@@ -4,9 +4,13 @@ import "./headline.css"
 import Logo from "./Trivago.png";
 import Typography from "@material-ui/core/Typography";
 import {useTranslation} from "react-i18next";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export function Headline() {
   const {t} = useTranslation();
+
+  const bigScreen = useMediaQuery('(min-width:600px)')
+  const smallScreen = useMediaQuery('(max-width:600px)');
 
   return (
     <Grid id="headline" container spacing={3} justify={"center"}>
@@ -15,7 +19,7 @@ export function Headline() {
       </Grid>
 
       <Grid item>
-        <Typography variant="h5"><strong>{t("headline.pitch")}</strong></Typography>
+        <Typography variant="h5"><strong>{smallScreen && t("headline.pitch.small")} {bigScreen && t("headline.pitch.big")}</strong></Typography>
         <Typography variant="body1">{t("headline.try")}</Typography>
       </Grid>
     </Grid>
