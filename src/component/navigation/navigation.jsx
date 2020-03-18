@@ -38,9 +38,10 @@ export function Navigation() {
   return (
     <AppBar position={"static"} color={"transparent"}>
       <Toolbar>
+        {displayLogo && <img alt={t("headline.logoAlt")} id="logosmall" src={Logo}/>}
         <Grid container justify={"flex-end"}>
+
           <Grid item>
-            {displayLogo && <img alt={t("headline.logoAlt")} id="logo" src={Logo}/>}
             <Button>{t("navigation.connectLabel")}</Button>
           </Grid>
 

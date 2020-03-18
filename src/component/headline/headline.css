@@ -3,6 +3,11 @@
     border-right: 1px solid rgba(119, 136, 153, 0.33);
 }
 
+#logosmall {
+    max-width: 150px;
+    border: none;
+}
+
 #headline{
     padding-top: 150px;
 }
