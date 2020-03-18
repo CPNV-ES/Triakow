@@ -4,14 +4,17 @@ import "./headline.css"
 import Logo from "./Trivago.png";
 import Typography from "@material-ui/core/Typography";
 import {useTranslation} from "react-i18next";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export function Headline() {
   const {t} = useTranslation();
 
+  const displayLogo = useMediaQuery('(min-width:980px)');
+
   return (
     <Grid id="headline" container spacing={3} justify={"center"}>
       <Grid item>
-        <img alt={t("headline.logoAlt")} id="logo" src={Logo}/>
+          {displayLogo && <img alt={t("headline.logoAlt")} id="logo" src={Logo}/>}
       </Grid>
 
       <Grid item>
