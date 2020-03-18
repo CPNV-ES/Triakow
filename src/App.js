@@ -1,18 +1,39 @@
-import React, {Suspense} from 'react';
-import {Search} from "./component/search/search";
-import {Headline} from "./component/headline/headline";
+import React from 'react';
+import {useTranslation} from "react-i18next";
 import {Navigation} from "./component/navigation/navigation";
+import {Headline} from "./component/headline/headline";
+import {Search} from "./component/search/search";
 
 function App() {
-  return (
-    <div>
-      <Suspense fallback={"loading"}>
+  const {t, i18n} = useTranslation();
+
+  let props = null;
+
+  if (i18n.isInitialized) {
+    props = {
+      headline: {
+        logo: {
+          alt: t("headline.logoAlt"),
+          src: "/Trivago.png",
+        },
+        pitch: t("headline.pitch"),
+        try: t("headline.try")
+      }
+    }
+  }
+
+  if (props !== null) {
+    return (
+      <div>
         <Navigation/>
-        <Headline/>
+        <Headline {...props.headline}/>
         <Search/>
-      </Suspense>
-    </div>
-  );
+      </div>
+    )
+  }
+
+  return <div><p>Loading</p></div>
+
 }
 
 export default App;
