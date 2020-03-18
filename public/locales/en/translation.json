@@ -2,7 +2,10 @@
   "defaultCurrency": "USD",
   "title": "Trivakow - Compare hotel prices worldwide",
   "headline": {
-    "pitch": "Find your ideal hotel and compare prices from different websites",
+    "pitch": {
+      "big": "Find your ideal hotel and compare prices from different websites",
+      "small": "Find your ideal place to stay"
+    },
     "try": "Try searching for a city, a specific hotel, or even a landmark!",
     "logoAlt": "Trivago logo"
   },
