@@ -8,6 +8,8 @@ import moment from 'moment'
 import Grid from "@material-ui/core/Grid";
 import {useTranslation} from "react-i18next";
 import MomentUtils from "@date-io/moment";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import SearchIcon from '@material-ui/icons/Search';
 
 import "moment/locale/fr";
 import "moment/locale/en-gb";
@@ -21,6 +23,8 @@ export function Search() {
   const [endAt, setEndAt] = useState(moment());
 
   const {t, i18n} = useTranslation();
+
+  const displayMagnifier = useMediaQuery('(max-width:979px)');
 
   return (
     <MuiPickersUtilsProvider utils={MomentUtils} locale={i18n.language}>
@@ -48,7 +52,7 @@ export function Search() {
 
         <Grid item>
           <Button variant="contained" color="primary">
-            {t("search.searchLabel")}
+            {displayMagnifier ? <SearchIcon/> : t("search.searchLabel")}
           </Button>
         </Grid>
       </Grid>
