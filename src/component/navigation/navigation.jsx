@@ -8,6 +8,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import {useTranslation} from "react-i18next";
 import {PopupMenu} from "../common/popupMenu/popupMenu";
+import Logo from "../headline/Trivago.png";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const AVAILABLE_LANGUAGE = ["FR", "EN", "DE", "IT"];
 
@@ -28,13 +30,17 @@ export function Navigation() {
 
   const renderedCurrencies = currencies.map((value, idx) =>
     <MenuItem key={idx} value={idx}>{value}</MenuItem>
+
+
   );
+  const displayLogo = useMediaQuery('(max-width:979px)');
 
   return (
     <AppBar position={"static"} color={"transparent"}>
       <Toolbar>
         <Grid container justify={"flex-end"}>
           <Grid item>
+            {displayLogo && <img alt={t("headline.logoAlt")} id="logo" src={Logo}/>}
             <Button>{t("navigation.connectLabel")}</Button>
           </Grid>
 
