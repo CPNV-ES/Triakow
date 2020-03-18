@@ -4,6 +4,7 @@ import {Navigation} from "./component/navigation/navigation";
 import {Headline} from "./component/headline/headline";
 import {Search} from "./component/search/search";
 import Axios from "axios";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function App() {
   const [selectedCurrencyKey, setSelectedCurrencyKey] = useState(0);
@@ -59,8 +60,12 @@ function App() {
     )
   }
 
-  return <div><p>Loading</p></div>
-
+  return (
+        <CircularProgress
+            size={70}
+            style={{marginLeft: '50%', marginTop: '15%'}}
+        />
+  )
 }
 
 export default App;
