@@ -26,7 +26,7 @@ export function Search(props) {
             <TextField name={"city"}
                        value={formik.values.city}
                        onChange={formik.handleChange}
-                       placeholder={props.cityPlaceholder}/>
+                       placeholder={props.label.cityPlaceholder}/>
           </Grid>
 
           <Grid item>
