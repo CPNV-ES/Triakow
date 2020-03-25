@@ -20,7 +20,7 @@ export function Search(props) {
   return (
     <form onSubmit={formik.handleSubmit}>
       <MuiPickersUtilsProvider utils={MomentUtils} locale={props.language}>
-        <Grid container spacing={3} justify={"center"}>
+        <Grid container spacing={3} justify={"center"} alignItems={"flex-end"}>
           <Grid item>
             <TextField name={"city"}
                        value={formik.values.city}
