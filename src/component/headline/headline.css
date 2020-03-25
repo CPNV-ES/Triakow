@@ -1,6 +1,11 @@
 #logo {
     max-width: 200px;
-    border-right: 1px solid lightslategrey;
+    border-right: 1px solid rgba(119, 136, 153, 0.33);
+}
+
+#logosmall {
+    max-width: 150px;
+    border: none;
 }
 
 #headline{

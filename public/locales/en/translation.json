@@ -1,0 +1,37 @@
+{
+  "defaultCurrency": "USD",
+  "title": "Trivakow - Compare hotel prices worldwide",
+  "headline": {
+    "pitch": {
+      "big": "Find your ideal hotel and compare prices from different websites",
+      "small": "Find your ideal place to stay"
+    },
+    "try": "Try searching for a city, a specific hotel, or even a landmark!",
+    "logoAlt": "Trivago logo"
+  },
+  "navigation": {
+    "connectLabel": "Log in",
+    "menu": {
+      "label": "Menu",
+      "item": {
+        "recentlyConsulted": "Recently viewed",
+        "previewReservation": "Booking overview",
+        "paymentMethod": "Payment methods"
+      }
+    }
+  },
+  "search": {
+    "room": {
+      "item": {
+        "single": "Single room",
+        "double": "Double room",
+        "family": "Family rooms",
+        "multiple": "Multiple rooms"
+      }
+    },
+    "checkInLabel": "Check in",
+    "checkOutLabel": "Check out",
+    "searchLabel": "Search",
+    "cityPlaceholder": "London"
+  }
+}

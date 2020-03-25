@@ -1,0 +1,37 @@
+{
+  "defaultCurrency": "EUR",
+  "title": "Trivakow – Hotelpreise weltweit vergleichen",
+  "headline": {
+    "pitch": {
+      "big": "Finde Dein ideales Hotel und vergleiche Preise von verschiedenen Webseiten",
+      "small": "Finde Deine ideale Unterkunft"
+    },
+    "try": "Suche nach einer Stadt, einem Hotel oder sogar nach einer Sehenswürdigkeit!",
+    "logoAlt": "Trivago logo"
+  },
+  "navigation": {
+    "connectLabel": "Einloggen",
+    "menu": {
+      "label": "Menü",
+      "item": {
+        "recentlyConsulted": "Zuletzt angesehen",
+        "previewReservation": "Buchungsübersicht",
+        "paymentMethod": "Zahlungsart"
+      }
+    }
+  },
+  "search": {
+    "room": {
+      "item": {
+        "single": "Einzelzimmer",
+        "double": "Doppelzimmer",
+        "family": "Familienzimmer",
+        "multiple": "Mehrere Zimmer"
+      }
+    },
+    "checkInLabel": "Anreise",
+    "checkOutLabel": "Abreise",
+    "searchLabel": "Suchen",
+    "cityPlaceholder": "Berlin"
+  }
+}
