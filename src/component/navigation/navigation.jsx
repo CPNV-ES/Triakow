@@ -9,18 +9,15 @@ import {PopupMenu} from "../common/popupMenu/popupMenu";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export function Navigation(props) {
+  const isLogoDisplayed = useMediaQuery('(max-width:979px)');
   const renderedCurrencies = props.currencies.map((value, idx) =>
     <MenuItem key={idx} value={idx}>{value}</MenuItem>
-
-
   );
-
-  const displayLogo = useMediaQuery('(max-width:979px)');
 
   return (
     <AppBar position={"static"} color={"transparent"}>
       <Toolbar>
-        {displayLogo && <img alt={props.label.logoAlt} id="logosmall" src={props.logoSrc}/>}
+        {isLogoDisplayed && <img alt={props.label.logoAlt} id="logosmall" src={props.logoSrc}/>}
         <Grid container justify={"flex-end"}>
 
           <Grid item>

@@ -11,12 +11,11 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SearchIcon from '@material-ui/icons/Search';
 
 export function Search(props) {
+  const isMagnifierDisplayed = useMediaQuery('(max-width:979px)');
   const formik = useFormik({
     initialValues: props.initialValues,
     onSubmit: props.onSubmit,
   });
-
-  const displayMagnifier = useMediaQuery('(max-width:979px)');
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -52,7 +51,7 @@ export function Search(props) {
 
           <Grid item>
             <Button type="submit" variant="contained" color="primary">
-              {displayMagnifier ? <SearchIcon/> : props.label.search}
+              {isMagnifierDisplayed ? <SearchIcon/> : props.label.search}
             </Button>
           </Grid>
         </Grid>
