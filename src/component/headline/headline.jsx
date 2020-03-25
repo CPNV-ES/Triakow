@@ -11,7 +11,8 @@ const useStyle = makeStyles((theme) => {
     container: {
       [theme.breakpoints.down('sm')]: {
         maxWidth: "90%",
-        margin: "auto"
+        margin: "auto",
+        justifyContent: "flex-start"
       }
     }
   }
@@ -25,9 +26,11 @@ export function Headline(props) {
 
   return (
     <Grid id="headline" container spacing={3} justify={"center"} className={classes.container}>
+      {isLogoDisplayed &&
       <Grid item>
-        {isLogoDisplayed && <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>}
+        <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>
       </Grid>
+      }
 
       <Grid item>
         <Typography
