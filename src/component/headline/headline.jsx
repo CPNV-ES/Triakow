@@ -3,13 +3,28 @@ import Grid from "@material-ui/core/Grid";
 import "./headline.css"
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {makeStyles} from "@material-ui/core/styles";
+import useTheme from "@material-ui/core/styles/useTheme";
+
+const useStyle = makeStyles((theme) => {
+  return {
+    container: {
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: "90%",
+        margin: "auto"
+      }
+    }
+  }
+});
 
 export function Headline(props) {
-  const isLogoDisplayed = useMediaQuery('(min-width:980px)');
-  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const theme = useTheme();
+  const classes = useStyle();
+  const isLogoDisplayed = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid id="headline" container spacing={3} justify={"center"}>
+    <Grid id="headline" container spacing={3} justify={"center"} className={classes.container}>
       <Grid item>
         {isLogoDisplayed && <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>}
       </Grid>
