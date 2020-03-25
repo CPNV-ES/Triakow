@@ -12,6 +12,8 @@ import "moment/locale/it";
 import "moment/locale/de";
 import moment from "moment";
 
+const LOGO_SRC = "/Trivago.png";
+
 function App() {
   const [selectedCurrencyKey, setSelectedCurrencyKey] = useState(0);
   const [currencies, setCurrencies] = useState([]);
@@ -22,14 +24,18 @@ function App() {
   if (i18n.isInitialized) {
     props = {
       headline: {
-        logoSrc: "/Trivago.png",
+        logoSrc: LOGO_SRC,
         label: {
-          pitch: t("headline.pitch"),
+          pitch: {
+            small: t("headline.pitch.small"),
+            big: t("headline.pitch.big")
+          },
           try: t("headline.try"),
           logoAlt: t("headline.logoAlt")
         }
       },
       navigation: {
+        logoSrc: LOGO_SRC,
         availableLanguages: ["FR", "EN", "DE", "IT"],
         selectedCurrencyKey: selectedCurrencyKey,
         setSelectedCurrencyKey: setSelectedCurrencyKey,

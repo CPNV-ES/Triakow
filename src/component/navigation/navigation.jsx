@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import {PopupMenu} from "../common/popupMenu/popupMenu";
-import Logo from "../headline/Trivago.png";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export function Navigation(props) {
@@ -15,12 +14,13 @@ export function Navigation(props) {
 
 
   );
+
   const displayLogo = useMediaQuery('(max-width:979px)');
 
   return (
     <AppBar position={"static"} color={"transparent"}>
       <Toolbar>
-        {displayLogo && <img alt={t("headline.logoAlt")} id="logosmall" src={Logo}/>}
+        {displayLogo && <img alt={props.label.logoAlt} id="logosmall" src={props.logoSrc}/>}
         <Grid container justify={"flex-end"}>
 
           <Grid item>
