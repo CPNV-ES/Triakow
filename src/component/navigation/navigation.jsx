@@ -13,6 +13,7 @@ import { useOnClickOutside } from '../../hook';
 
 
 export function Navigation(props) {
+  const isLogoDisplayed = useMediaQuery('(max-width:979px)');
   const renderedCurrencies = props.currencies.map((value, idx) =>
     <MenuItem key={idx} value={idx}>{value}</MenuItem>
 
@@ -30,11 +31,11 @@ export function Navigation(props) {
   return (
     <AppBar position={"static"} color={"transparent"}>
       <Toolbar>
-        {displayLogo && <img alt={props.label.logoAlt} id="logosmall" src={props.logoSrc}/>}
+        {isLogoDisplayed && <img alt={props.label.logoAlt} id="logosmall" src={props.logoSrc}/>}
         <Grid container justify={"flex-end"}>
 
           <Grid item>
-               <Button>{props.label.connection}</Button>
+            <Button>{props.label.connection}</Button>
           </Grid>
 
           <Grid item>

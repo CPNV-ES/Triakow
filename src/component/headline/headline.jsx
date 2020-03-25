@@ -3,19 +3,38 @@ import Grid from "@material-ui/core/Grid";
 import "./headline.css"
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {makeStyles} from "@material-ui/core/styles";
+import useTheme from "@material-ui/core/styles/useTheme";
+
+const useStyle = makeStyles((theme) => {
+  return {
+    container: {
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: "90%",
+        margin: "auto",
+        justifyContent: "flex-start"
+      }
+    }
+  }
+});
 
 export function Headline(props) {
-    const displayLogo = useMediaQuery('(min-width:980px)');
-    const smallScreen = useMediaQuery('(max-width:600px)');
+  const theme = useTheme();
+  const classes = useStyle();
+  const isLogoDisplayed = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid id="headline" container spacing={3} justify={"center"}>
+    <Grid id="headline" container spacing={3} justify={"center"} className={classes.container}>
+      {isLogoDisplayed &&
       <Grid item>
-          {displayLogo && <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>}
+        <img alt={props.label.logoAlt} id="logo" src={props.logoSrc}/>
       </Grid>
+      }
 
       <Grid item>
-        <Typography variant="h5"><strong>{smallScreen ? props.label.pitch.small : props.label.pitch.big}</strong></Typography>
+        <Typography
+          variant="h5"><strong>{isSmallScreen ? props.label.pitch.small : props.label.pitch.big}</strong></Typography>
         <Typography variant="body1">{props.label.try}</Typography>
       </Grid>
     </Grid>

@@ -102,7 +102,6 @@ function App() {
       style={{marginLeft: '50%', marginTop: '15%'}}
     />
   )
-
 }
 
 export default App;
