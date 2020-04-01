@@ -19,6 +19,10 @@ server {
 	location / {
 		try_files \$uri \$uri/ /index.html;
 	}
+	
+	location /locales/ {
+                autoindex on;
+        }
 }
 EOS
 
