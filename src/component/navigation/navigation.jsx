@@ -24,8 +24,8 @@ export function Navigation(props) {
     const node = useRef();
     useOnClickOutside(node, () => setOpen(false));
 
-    const displayBurger = useMediaQuery('(max-width:979px)');
-    const displayMenu = useMediaQuery('(min-width:979px)');
+    const isBurgerDisplayed = useMediaQuery('(max-width:979px)');
+    const isMenuDisplayed = useMediaQuery('(min-width:979px)');
 
   return (
     <AppBar position={"static"} color={"transparent"}>
@@ -38,7 +38,7 @@ export function Navigation(props) {
           </Grid>
 
           <Grid item>
-              {displayMenu && <PopupMenu
+              {isMenuDisplayed && <PopupMenu
               id={"openMenu"}
               label={props.label.menu}
               items={[
@@ -50,14 +50,14 @@ export function Navigation(props) {
           </Grid>
 
           <Grid item>
-              {displayMenu && <Select disableUnderline value={props.selectedCurrencyKey}
+              {isMenuDisplayed && <Select disableUnderline value={props.selectedCurrencyKey}
                     onChange={event => props.setSelectedCurrencyKey(event.target.value)}>
               {renderedCurrencies}
             </Select>}
           </Grid>
 
           <Grid item>
-              {displayMenu && <PopupMenu
+              {isMenuDisplayed && <PopupMenu
               id={"openMenuLang"}
               label={props.language}
               items={props.availableLanguages.map(lang => {
@@ -72,7 +72,7 @@ export function Navigation(props) {
 
           <Grid item>
               <div ref={node}>
-                  { displayBurger && <Burger open={open} setOpen={setOpen} />}
+                  { isBurgerDisplayed && <Burger open={open} setOpen={setOpen} />}
               </div>
           </Grid>
           <MenuResponsive open={open} setOpen={setOpen} />
