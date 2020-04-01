@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
@@ -7,9 +7,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import {PopupMenu} from "../common/popupMenu/popupMenu";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Burger from "../burger/burger";
-import MenuResponsive from "../menu-responsive";
-import { useOnClickOutside } from '../../hook';
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 
 export function Navigation(props) {
@@ -19,10 +18,6 @@ export function Navigation(props) {
 
 
   );
-    const [open, setOpen] = useState(false);
-
-    const node = useRef();
-    useOnClickOutside(node, () => setOpen(false));
 
     const isBurgerDisplayed = useMediaQuery('(max-width:979px)');
     const isMenuDisplayed = useMediaQuery('(min-width:979px)');
@@ -71,11 +66,8 @@ export function Navigation(props) {
           </Grid>
 
           <Grid item>
-              <div ref={node}>
-                  { isBurgerDisplayed && <Burger open={open} setOpen={setOpen} />}
-              </div>
+                  { isBurgerDisplayed && <MenuIcon/>}
           </Grid>
-          <MenuResponsive open={open} setOpen={setOpen} />
 
         </Grid>
       </Toolbar>
