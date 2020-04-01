@@ -21,7 +21,7 @@ const useStyle = makeStyles((theme) => {
 export function Headline(props) {
   const theme = useTheme();
   const classes = useStyle();
-  const isLogoDisplayed = useMediaQuery(theme.breakpoints.up("md"));
+  const isLogoDisplayed = useMediaQuery('(min-width:980px)');
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (

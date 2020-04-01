@@ -24,7 +24,6 @@ export function Navigation(props) {
     const node = useRef();
     useOnClickOutside(node, () => setOpen(false));
 
-    const displayLogo = useMediaQuery('(max-width:979px)');
     const displayBurger = useMediaQuery('(max-width:979px)');
     const displayMenu = useMediaQuery('(min-width:979px)');
 
